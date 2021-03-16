@@ -66,4 +66,9 @@ export const ModalWrapper = styled.div`
   img {
     margin: 4px;
   }
+  button {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
 `;

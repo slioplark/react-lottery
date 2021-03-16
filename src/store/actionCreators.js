@@ -13,3 +13,13 @@ export const getUserList = () => {
       .catch(err => console.log(err));
   }
 }
+
+export const openModal = () => ({
+  type: actionTypes.OPEN_MODAL,
+  payload: true
+});
+
+export const closeModal = () => ({
+  type: actionTypes.CLOSE_MODAL,
+  payload: false
+});
