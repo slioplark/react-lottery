@@ -8,6 +8,8 @@ const defaultState = {
 
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
+    case actionTypes.GET_USER:
+      return { ...state, user: state.userList[action.payload] };
     case actionTypes.GET_USER_LIST:
       return { ...state, userList: action.payload };
     case actionTypes.OPEN_MODAL:

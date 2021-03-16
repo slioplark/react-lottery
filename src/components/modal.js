@@ -4,11 +4,12 @@ import { ModalWrapper } from './style';
 import photo from '../static/photo.png'
 
 const Modal = () => {
+  const user = useSelector(state => state.user)
   const isModalOpen = useSelector(state => state.isModalOpen);
   const dispatch = useDispatch();
 
   const closeModal = () => {
-    dispatch(actionCreators.closeModal())
+    dispatch(actionCreators.closeModal());
   }
 
   return (
@@ -16,7 +17,7 @@ const Modal = () => {
       <button onClick={closeModal}>X</button>
       <h2>抽獎結果</h2>
       <img src={photo} alt="" />
-      <div>1</div>
+      <div>{user.name}</div>
     </ModalWrapper>
   );
 }

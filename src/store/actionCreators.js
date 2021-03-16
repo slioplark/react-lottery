@@ -6,6 +6,11 @@ const changeUserList = (data) => ({
   payload: data
 });
 
+export const getUser = (random) => ({
+  type: actionTypes.GET_USER,
+  payload: random
+});
+
 export const getUserList = () => {
   return (dispatch) => {
     axios.get('https://jsonplaceholder.typicode.com/users')

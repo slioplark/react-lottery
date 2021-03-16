@@ -7,6 +7,8 @@ const Timer = () => {
   const dispatch = useDispatch();
 
   const openModal = () => {
+    const random = Math.floor(Math.random() * 10);
+    dispatch(actionCreators.getUser(random));
     dispatch(actionCreators.openModal());
   }
 
