@@ -14,10 +14,16 @@ const Timer = () => {
   const dispatch = useDispatch();
 
   const setTimer = () => {
-    const inputVal = inputRef.current.value;
+    let timer = null;
+    const inputVal = Number(inputRef.current.value) || 0;
+
+    if (!inputVal) return;
+
     setM(inputVal);
     minuteRef.current = inputVal;
-    let x = setInterval(() => {
+
+    clearInterval(timer);
+    timer = setInterval(() => {
       if (secondRef.current === 0) {
         setM(prev => prev - 1);
         setS(prev => prev === 0 ? 59 : prev);
@@ -29,7 +35,7 @@ const Timer = () => {
       }
 
       if (secondRef.current === 0 && minuteRef.current === 0) {
-        clearInterval(x);
+        clearInterval(timer);
         setM(0);
         setS(0);
         openModal();

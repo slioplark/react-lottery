@@ -12,13 +12,22 @@ export const AppWrapper = styled.div`
 export const TimerWrapper = styled.div`
   flex: 0 0 50%;
   h2 {
-    margin: 4px;
+    margin: 8px;
   }
   input {
-    margin: 4px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 8px;
+    padding: 0 8px;
   }
   button {
-    margin: 4px;
+    min-width: 64px;
+    font-size: 16px;
+    line-height: 36px;
+    margin: 8px;
+    padding: 0 16px;
   }
 `;
 
@@ -29,20 +38,20 @@ export const Counter = styled.div`
 
 export const List = styled.div`
   width: 100%;
-  margin: 4px;
+  margin: 8px;
   padding: 4px;
   border: 1px solid #000;
   border-radius: 4px;
 `;
 
 export const Item = styled.div`
-  margin: 4px;
+  margin: 8px;
 `;
 
 export const UsersWrapper = styled.div`
   flex: 0 0 50%;
   h2 {
-    margin: 4px;
+    margin: 8px;
   }
 `;
 
@@ -61,10 +70,10 @@ export const ModalWrapper = styled.div`
     display: none;
   }
   h2 {
-    margin: 4px;
+    margin: 8px;
   }
   img {
-    margin: 4px;
+    margin: 8px;
   }
   button {
     position: absolute;
