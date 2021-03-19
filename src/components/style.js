@@ -42,10 +42,12 @@ export const Counter = styled.div`
 `;
 
 export const List = styled.div`
+  height: 50vh;
   margin: 16px 8px;
   padding: 4px;
   border: 1px solid #000;
   border-radius: 4px;
+  overflow: scroll;
   img {
     width: 50px;
     height: 50px;
