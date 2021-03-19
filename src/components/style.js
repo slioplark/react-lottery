@@ -132,6 +132,9 @@ export const LoaderWrapper = styled.div`
   .skeleton-paragraph {
     width: 50%;
     height: 32px;
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   @keyframes loading {
