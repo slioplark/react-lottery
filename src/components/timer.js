@@ -56,8 +56,14 @@ const Timer = () => {
   }, [isReset]);
 
   const handleSetTime = () => {
-    setIsReset(true);
-    dispatch(actionCreators.closeModal());
+    let bool = true;
+    if (minuteRef.current || secondRef.current) {
+      bool = window.confirm('很抱歉，計時器仍未結束，請問要重新設定嗎？');
+    }
+    if (bool) {
+      setIsReset(true);
+      dispatch(actionCreators.closeModal());
+    }
   }
 
   const handleChangeTime = (e) => {
