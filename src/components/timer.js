@@ -4,19 +4,18 @@ import * as actionCreators from '../store/actionCreators';
 import { TimerWrapper, Counter } from './style';
 
 const Timer = () => {
+  const [time, setTime] = useState('');
   const [minute, setMinute] = useState(0);
   const [second, setSecond] = useState(0);
   const [isReset, setIsReset] = useState(false);
 
-  const inputRef = useRef(0);
   const minuteRef = useRef(0);
   const secondRef = useRef(0);
   const dispatch = useDispatch();
 
   useEffect(() => {
     let timer = null;
-    let inputVal = Number(inputRef.current.value) || 0;
-    if (inputVal < 0) inputVal = 0;
+    let inputVal = Number(time) || 0;
 
     const openModal = () => {
       const random = Math.floor(Math.random() * 10);
@@ -54,12 +53,22 @@ const Timer = () => {
       clearInterval(timer);
       setIsReset(false);
     }
-  }, [isReset, dispatch]);
+  }, [isReset]);
+
+  const handleChangeTime = (e) => {
+    const inputVal = e.target.value;
+    if (inputVal.match('^$|^0$|^[1-9]\\d*$')) {
+      setTime(inputVal);
+    }
+  }
 
   return (
     <TimerWrapper>
       <h2>抽獎時間</h2>
-      <input type="number" min='0' ref={inputRef} />
+      <input
+        type="text"
+        value={time}
+        onChange={(e) => handleChangeTime(e)} />
       <span>分鐘</span>
       <button onClick={() => setIsReset(true)}>設定</button>
       <Counter>{minute}:{second}</Counter>
