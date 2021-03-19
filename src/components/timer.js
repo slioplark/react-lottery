@@ -55,6 +55,11 @@ const Timer = () => {
     }
   }, [isReset]);
 
+  const handleSetTime = () => {
+    setIsReset(true);
+    dispatch(actionCreators.closeModal());
+  }
+
   const handleChangeTime = (e) => {
     const inputVal = e.target.value;
     if (inputVal.match('^$|^0$|^[1-9]\\d*$')) {
@@ -70,8 +75,12 @@ const Timer = () => {
         value={time}
         onChange={(e) => handleChangeTime(e)} />
       <span>分鐘</span>
-      <button onClick={() => setIsReset(true)}>設定</button>
-      <Counter>{minute}:{second}</Counter>
+      <button onClick={handleSetTime}>設定</button>
+      <Counter>
+        {minute.toString().length < 2 ? `0${minute}` : minute}
+        :
+        {second.toString().length < 2 ? `0${second}` : second}
+      </Counter>
     </TimerWrapper>
   );
 }
