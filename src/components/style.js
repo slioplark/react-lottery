@@ -107,3 +107,39 @@ export const ImgWrapper = styled.div`
     width: 100%;
   }
 `;
+
+export const LoaderWrapper = styled.div`
+  section {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%);
+    background-size: 400% 100%;
+    animation: loading 1.4s ease infinite;
+  }
+
+  .skeleton-avatar {
+    flex: 0 0 auto;
+    width: 50px;
+    height: 50px;
+    margin-right: 8px;
+    border-radius: 50%;
+  }
+
+  .skeleton-paragraph {
+    width: 50%;
+    height: 32px;
+  }
+
+  @keyframes loading {
+    0% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+`;
