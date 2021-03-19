@@ -11,6 +11,7 @@ export const AppWrapper = styled.div`
   box-sizing: border-box;
   @media only screen and (max-width: 768px) {
     flex-direction: column;
+    margin: 16px auto;
   }
 `;
 
