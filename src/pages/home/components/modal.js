@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { actionCreators } from '../store';
-import { ModalWrapper, ImgWrapper } from '../style';
+import { ModalWrapper, ModalContent, ImgWrapper } from '../style';
 import photo from '../../../static/photo.jpg';
 
 const Modal = () => {
@@ -14,12 +14,14 @@ const Modal = () => {
 
   return (
     <ModalWrapper className={isModalOpen ? '' : 'hidden'}>
-      <button onClick={closeModal}>X</button>
-      <h2>抽獎結果</h2>
-      <ImgWrapper>
-        <img src={photo} alt="" />
-      </ImgWrapper>
-      <div>{user.name}</div>
+      <ModalContent>
+        <button onClick={closeModal}>X</button>
+        <h2>抽獎結果</h2>
+        <ImgWrapper>
+          <img src={photo} alt="" />
+        </ImgWrapper>
+        <p>{user.name}</p>
+      </ModalContent>
     </ModalWrapper>
   );
 }

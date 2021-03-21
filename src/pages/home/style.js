@@ -75,20 +75,36 @@ export const Item = styled.div`
 `;
 
 export const ModalWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  max-width: 200px;
-  padding: 4px;
-  box-sizing: border-box;
-  text-align: center;
-  transform: translate(-50%, -50%);
-  border: 1px solid #000;
-  border-radius: 4px;
-  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
   &.hidden {
     display: none;
+  }
+`;
+
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 50vh;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background-color: #fff;
+  p {
+    margin: 8px;
   }
   h2 {
     margin: 8px;
@@ -101,13 +117,14 @@ export const ModalWrapper = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  max-width: 200px;
-  max-height: 200px;
-  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
   img {
-    width: 100%;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
   }
 `;
 
