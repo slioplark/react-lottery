@@ -54,12 +54,14 @@ export const UsersWrapper = styled.div`
 `;
 
 export const List = styled.div`
-  height: 50vh;
+  height: min-content;
+  max-height: 70vh;
   margin: 16px 0;
   padding: 4px;
   border: 1px solid #000;
   border-radius: 4px;
   overflow: scroll;
+  cursor: pointer;
   img {
     width: 50px;
     height: 50px;
