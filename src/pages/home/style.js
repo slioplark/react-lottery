@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AppWrapper = styled.div`
+export const HomeWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -18,6 +18,9 @@ export const AppWrapper = styled.div`
 export const TimerWrapper = styled.div`
   flex: 0 0 50%;
   h2 {
+    margin: 8px 0;
+  }
+  span {
     margin: 8px;
   }
   input {
@@ -25,14 +28,14 @@ export const TimerWrapper = styled.div`
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    margin: 8px;
+    margin: 8px 0;
     padding: 0 8px;
   }
   button {
     min-width: 64px;
     font-size: 16px;
     line-height: 36px;
-    margin: 8px;
+    margin: 8px 0;
     padding: 0 16px;
   }
 `;
@@ -42,9 +45,17 @@ export const Counter = styled.div`
   font-weight: bold;
 `;
 
+export const UsersWrapper = styled.div`
+  flex: 0 0 50%;
+  box-sizing: border-box;
+  h2 {
+    margin: 8px 0;
+  }
+`;
+
 export const List = styled.div`
   height: 50vh;
-  margin: 16px 8px;
+  margin: 16px 0;
   padding: 4px;
   border: 1px solid #000;
   border-radius: 4px;
@@ -61,14 +72,6 @@ export const Item = styled.div`
   display: flex;
   align-items: center;
   margin: 8px;
-`;
-
-export const UsersWrapper = styled.div`
-  flex: 0 0 50%;
-  box-sizing: border-box;
-  h2 {
-    margin: 8px;
-  }
 `;
 
 export const ModalWrapper = styled.div`
@@ -108,7 +111,7 @@ export const ImgWrapper = styled.div`
   }
 `;
 
-export const LoaderWrapper = styled.div`
+export const UserLoaderWrapper = styled.div`
   section {
     display: flex;
     align-items: center;

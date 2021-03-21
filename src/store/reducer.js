@@ -1,24 +1,8 @@
-import * as actionTypes from './actionTypes';
+import { combineReducers } from "redux";
+import { reducer as HomeReducer } from '../pages/home/store';
 
-const defaultState = {
-  user: {},
-  userList: [],
-  isModalOpen: false
-};
-
-const reducer = (state = defaultState, action) => {
-  switch (action.type) {
-    case actionTypes.GET_USER:
-      return { ...state, user: state.userList[action.payload] };
-    case actionTypes.GET_USER_LIST:
-      return { ...state, userList: action.payload };
-    case actionTypes.OPEN_MODAL:
-      return { ...state, isModalOpen: action.payload };
-    case actionTypes.CLOSE_MODAL:
-      return { ...state, isModalOpen: action.payload };
-    default:
-      return state;
-  }
-}
+const reducer = combineReducers({
+  home: HomeReducer
+});
 
 export default reducer;

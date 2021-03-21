@@ -1,6 +1,6 @@
 
 import UserContent from './userContent';
-import { UsersWrapper, List } from './style';
+import { UsersWrapper, List } from '../style';
 
 const Users = () => {
   return (

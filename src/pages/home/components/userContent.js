@@ -1,12 +1,12 @@
-import Loader from './loader';
+import UserLoader from './userLoader';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import * as actionCreators from '../store/actionCreators';
-import { Item } from './style';
-import photo from '../static/photo.jpg';
+import { actionCreators } from '../store';
+import { Item } from '../style';
+import photo from '../../../static/photo.jpg';
 
 const UserContent = () => {
-  const userList = useSelector(state => state.userList);
+  const userList = useSelector(state => state.home.userList);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const UserContent = () => {
     );
   } else {
     return (
-      <Loader />
+      <UserLoader />
     );
   }
 }

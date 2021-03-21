@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import * as actionCreators from '../store/actionCreators';
-import { TimerWrapper, Counter } from './style';
+import { actionCreators } from '../store';
+import { TimerWrapper, Counter } from '../style';
 
 const Timer = () => {
   const [time, setTime] = useState('');

@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
-import * as actionCreators from '../store/actionCreators';
-import { ModalWrapper, ImgWrapper } from './style';
-import photo from '../static/photo.jpg';
+import { actionCreators } from '../store';
+import { ModalWrapper, ImgWrapper } from '../style';
+import photo from '../../../static/photo.jpg';
 
 const Modal = () => {
-  const user = useSelector(state => state.user)
-  const isModalOpen = useSelector(state => state.isModalOpen);
+  const user = useSelector(state => state.home.user)
+  const isModalOpen = useSelector(state => state.home.isModalOpen);
   const dispatch = useDispatch();
 
   const closeModal = () => {

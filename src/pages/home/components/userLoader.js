@@ -1,8 +1,8 @@
-import { LoaderWrapper } from './style';
+import { UserLoaderWrapper } from '../style';
 
-const Loader = () => {
+const UserLoader = () => {
   return (
-    <LoaderWrapper>
+    <UserLoaderWrapper>
       <section>
         <div className="skeleton skeleton-avatar"></div>
         <div className="skeleton skeleton-paragraph"></div>
@@ -23,8 +23,8 @@ const Loader = () => {
         <div className="skeleton skeleton-avatar"></div>
         <div className="skeleton skeleton-paragraph"></div>
       </section>
-    </LoaderWrapper>
+    </UserLoaderWrapper>
   );
 }
 
-export default Loader;
+export default UserLoader;
